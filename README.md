@@ -1,2 +1,2 @@
-# tailwind-webapp-demo
-A simple demo web app using tailwind css
+# tailwind-angular-webapp-demo
+A simple demo web app using Anglar and Tailwind CSS
