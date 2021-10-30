@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginUseCase } from 'src/app/core/usecases/login.usecase';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginUseCase: LoginUseCase, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  onSubmitFormLogin(email: string, password: string): void{
+    console.log(email, password);
+    this.loginUseCase.execute({ email, password }).subscribe(() => {
+      console.log("login");
+      this.router.navigate([""]);
+    })
+  }
 }

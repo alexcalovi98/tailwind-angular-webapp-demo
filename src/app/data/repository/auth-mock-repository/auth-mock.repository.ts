@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { flatMap, map } from "rxjs/operators";
+import { Observable, of } from "rxjs";
+import { catchError, flatMap, map } from "rxjs/operators";
 import { User } from "src/app/core/domain/user.model";
 import { AuthRepository } from "src/app/core/repositories/auth.repository";
 import { UserMockEntity } from "./user-mock-entity";
@@ -39,7 +39,7 @@ export class AuthMockRepository implements AuthRepository{
     }
     
     isUserAuthenticated(): Observable<boolean> {
-        return this.retrieveUser().pipe(map((() => true), map(() => false)));
+        return this.retrieveUser().pipe(map(() => true), catchError(err => of(false)));
     }
 
 }
