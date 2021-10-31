@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
   onSubmitFormLogin(email: string, password: string): void{
     console.log(email, password);
     this.loginUseCase.execute({ email, password }).subscribe(() => {
-      console.log("login");
-      this.router.navigate([""]);
+      this.router.navigate(["app"]);
     })
   }
 }

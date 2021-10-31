@@ -8,12 +8,16 @@ import { AuthRepository } from './core/repositories/auth.repository';
 import { AuthMockRepository } from './data/repository/auth-mock-repository/auth-mock.repository';
 import { LoginComponent } from './presentation/components/login/login.component';
 import { PanelComponent } from './presentation/components/panel/panel.component';
+import { DashboardComponent } from './presentation/components/panel/dashboard/dashboard.component';
+import { PageComponent } from './presentation/components/panel/page/page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PanelComponent
+    PanelComponent,
+    DashboardComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

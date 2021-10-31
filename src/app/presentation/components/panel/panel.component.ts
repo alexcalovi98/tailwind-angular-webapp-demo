@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-panel',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelComponent implements OnInit {
 
-  constructor() { }
+  isMobileMenuOpened: boolean = false;
 
-  ngOnInit(): void {
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {}
+
+  toggleMenuMobile(): void{
+    this.isMobileMenuOpened = !this.isMobileMenuOpened;
   }
 
 }
