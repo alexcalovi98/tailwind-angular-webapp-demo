@@ -1,4 +1,4 @@
-export interface User {
+export interface AccountMockEntity{
     name: string;
     surname: string;
     email: string;

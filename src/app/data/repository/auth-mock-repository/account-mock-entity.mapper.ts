@@ -1,10 +1,10 @@
 import { Mapper } from "src/app/core/base/mapper";
-import { User } from "src/app/core/domain/user.model";
-import { UserMockEntity } from "./user-mock-entity";
+import { Account } from "src/app/core/domain/account.model";
+import { AccountMockEntity } from "./account-mock-entity";
 
-export class UserMockEntityMapper implements Mapper<UserMockEntity, User>{
+export class AccountMockEntityMapper implements Mapper<AccountMockEntity, Account>{
     
-    mapFrom(param: UserMockEntity): User {
+    mapFrom(param: AccountMockEntity): Account {
         return {
             name: param.name,
             surname: param.surname,
@@ -12,7 +12,7 @@ export class UserMockEntityMapper implements Mapper<UserMockEntity, User>{
         };
     }
     
-    mapTo(param: User): UserMockEntity {
+    mapTo(param: Account): AccountMockEntity {
         return {
             name: param.name,
             surname: param.surname,
