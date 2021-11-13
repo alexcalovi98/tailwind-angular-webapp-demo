@@ -42,4 +42,10 @@ export class AuthMockRepository implements AuthRepository{
         return this.retrieveUser().pipe(map(() => true), catchError(err => of(false)));
     }
 
+    logout(): Observable<void> {
+        return new Observable(subsribe => {
+            localStorage.clear();
+            subsribe.next();
+        });
+    }
 }

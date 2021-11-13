@@ -10,6 +10,7 @@ import { LoginComponent } from './presentation/components/login/login.component'
 import { PanelComponent } from './presentation/components/panel/panel.component';
 import { DashboardComponent } from './presentation/components/panel/dashboard/dashboard.component';
 import { PageComponent } from './presentation/components/panel/page/page.component';
+import { TeamComponent } from './presentation/components/panel/team/team.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageComponent } from './presentation/components/panel/page/page.compone
     LoginComponent,
     PanelComponent,
     DashboardComponent,
-    PageComponent
+    PageComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
