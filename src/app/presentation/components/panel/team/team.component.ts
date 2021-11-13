@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/core/domain/user.model';
+import { GetUsersUseCase } from 'src/app/core/usecases/get-users.usecase';
 
 @Component({
   selector: 'app-team',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
-  constructor() { }
+  users: User[] = [];
+
+  constructor(private getUsersUseCase: GetUsersUseCase) { }
 
   ngOnInit(): void {
+    this.getUsersUseCase.execute({}).subscribe(users => this.users = users);
   }
 
 }

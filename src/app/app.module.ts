@@ -11,6 +11,8 @@ import { PanelComponent } from './presentation/components/panel/panel.component'
 import { DashboardComponent } from './presentation/components/panel/dashboard/dashboard.component';
 import { PageComponent } from './presentation/components/panel/page/page.component';
 import { TeamComponent } from './presentation/components/panel/team/team.component';
+import { UserRepository } from './core/repositories/user.repository';
+import { UserMockRepository } from './data/repository/user-mock-repository/user-mock.repository';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import { TeamComponent } from './presentation/components/panel/team/team.compone
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ { provide: AuthRepository, useClass: AuthMockRepository}],
+  providers: [
+    { provide: AuthRepository, useClass: AuthMockRepository },
+    { provide: UserRepository, useClass: UserMockRepository }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
